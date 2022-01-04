@@ -974,7 +974,8 @@ line-height: 35px;
      top: 40%;
      width: auto;
      padding: 16px;
-     margin-top: -50px;
+     margin-top: auto;
+     margin-bottom: auto;
      color: white;
      font-weight: bold;
      font-size: 20px;
@@ -1039,5 +1040,22 @@ line-height: 35px;
      margin-left: auto;
      margin-right: auto;
      width: 50%;
+   }
+
+/* hide mobile version by default */
+  .logo .mobile {
+     display: none;
+   }
+   /* when screen is less than 600px wide
+      show mobile version and hide desktop */
+   @media (max-width: 575px) {
+     .logo .mobile {
+       display: block;
+       max-height:20%;
+       max-width:20%
+     }
+     .logo .desktop {
+       display: none;
+     }
    }
 

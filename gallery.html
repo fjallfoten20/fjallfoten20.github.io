@@ -46,7 +46,8 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index.html"><img src="images/logo.png" style="max-width:100%" alt="#" /></a>
+                              <a href="index.html"><img src="images/logo.png" class="desktop" alt="#" /></a>
+                              <a href="index.html"><img src="images/logo_small.png" class="mobile" alt="#" /></a>
                            </div>
                         </div>
                      </div>
@@ -100,112 +101,112 @@
          <div class="image-container">
 
             <!-- Full-width images with number text -->
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
             <div class="numbertext">1 / 22</div>
                <img src="images/gallery1.jpg" style="width:100%" class="center">
             </div>
          
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
             <div class="numbertext">2 / 22</div>
                <img src="images/gallery2.jpg" style="width:100%" class="center">
             </div>
          
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
             <div class="numbertext">3 / 22</div>
                <img src="images/gallery3.jpg" style="width:100%" class="center">
             </div>
          
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
             <div class="numbertext">4 / 22</div>
                <img src="images/gallery4.jpg" style="width:100%" class="center">
             </div>
          
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
             <div class="numbertext">5 / 22</div>
                <img src="images/gallery5.jpg" style="width:100%" class="center">
             </div>
          
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
             <div class="numbertext">6 / 22</div>
                <img src="images/gallery6.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
                <div class="numbertext">7 /22</div>
                   <img src="images/gallery7.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
                <div class="numbertext">8 /22</div>
                   <img src="images/gallery8.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
                <div class="numbertext">9 /22</div>
                   <img src="images/gallery9.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
                <div class="numbertext">10 /22</div>
                   <img src="images/gallery10.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
                <div class="numbertext">11 /22</div>
                   <img src="images/gallery11.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
                <div class="numbertext">12 /22</div>
                   <img src="images/gallery12.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
                <div class="numbertext">13 /22</div>
                   <img src="images/gallery13.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
                <div class="numbertext">14 /22</div>
                   <img src="images/gallery14.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
                <div class="numbertext">15 /22</div>
                   <img src="images/gallery15.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
                <div class="numbertext">16 /22</div>
                   <img src="images/gallery16.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
                <div class="numbertext">17 /22</div>
                   <img src="images/gallery17.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
                <div class="numbertext">18 /22</div>
                   <img src="images/gallery18.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
                <div class="numbertext">19 /22</div>
                   <img src="images/gallery19.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
                <div class="numbertext">20 /22</div>
                   <img src="images/gallery20.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
                <div class="numbertext">21 /22</div>
                   <img src="images/gallery21.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides" id="touchsurface">
+            <div class="mySlides">
                <div class="numbertext">22 /22</div>
                   <img src="images/gallery22.jpg" style="width:100%" class="center">
             </div>
@@ -291,7 +292,7 @@
          </div>
       </div>
       <!-- end gallery -->
-      <!-- java script-->>
+      <!-- java script-->
       <script>
       var slideIndex = 1;
       showSlides(slideIndex);
@@ -338,50 +339,8 @@
          dots[slideIndex-1].className += " active";
          captionText.innerHTML = dots[slideIndex-1].alt;
       }
-
-      window.addEventListener('load', function(){
- 
-      var touchsurface = document.getElementById('touchsurface'),
-         startX,
-         startY,
-         dist,
-         threshold = 150, //required min distance traveled to be considered swipe
-         allowedTime = 200, // maximum time allowed to travel that distance
-         elapsedTime,
-         startTime
-
-      function handleswipe(isrightswipe){
-         if (isrightswipe)
-            plusSlides(1)
-      }
-
-      touchsurface.addEventListener('touchstart', function(e){
-         var touchobj = e.changedTouches[0]
-         dist = 0
-         startX = touchobj.pageX
-         startY = touchobj.pageY
-         startTime = new Date().getTime() // record time when finger first makes contact with surface
-         e.preventDefault()
-      }, false)
-
-      touchsurface.addEventListener('touchmove', function(e){
-         e.preventDefault() // prevent scrolling when inside DIV
-      }, false)
-
-      touchsurface.addEventListener('touchend', function(e){
-         var touchobj = e.changedTouches[0]
-         dist = touchobj.pageX - startX // get total dist traveled by finger while in contact with surface
-         elapsedTime = new Date().getTime() - startTime // get time elapsed
-         // check that elapsed time is within specified, horizontal dist traveled >= threshold, and vertical dist traveled <= 100
-         var swiperightBol = (elapsedTime <= allowedTime && dist >= threshold && Math.abs(touchobj.pageY - startY) <= 100)
-         handleswipe(swiperightBol)
-         e.preventDefault()
-      }, false)
-
-      }, false) // end window.onload
-
       </script>
-      <!-- end java script-->>
+      <!-- end java script-->
       <!--  footer -->
       <footer>
          <div class="footer">
