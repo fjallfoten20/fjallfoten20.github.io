@@ -1051,8 +1051,8 @@ line-height: 35px;
    @media (max-width: 575px) {
      .logo .mobile {
        display: block;
-       max-height:20%;
-       max-width:20%
+       max-height:40%;
+       max-width:40%
      }
      .logo .desktop {
        display: none;
