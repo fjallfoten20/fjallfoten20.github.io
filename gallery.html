@@ -46,7 +46,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                              <a href="index.html"><img src="images/logo.png" style="max-width:100%" alt="#" /></a>
                            </div>
                         </div>
                      </div>
@@ -385,9 +385,11 @@
       if (yTravel<tolerance && yTravel>-tolerance && xTravel>tolerance){
          gesture.match = 'Swiped Right'
       }
-      if (gesture.match!==''){
-         output.innerHTML = gesture.match
-         output.style.opacity = 1
+      if (gesture.match=='Swiped Left'){
+         plusSlides(1)
+      }
+      else if (gesture.match=='Swiped Right'){
+         plusSlides(-1)
       }
       setTimeout(function(){
          output.style.opacity = 0
