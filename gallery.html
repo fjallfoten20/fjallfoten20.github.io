@@ -105,107 +105,107 @@
                <img src="images/gallery1.jpg" style="width:100%" class="center">
             </div>
          
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
             <div class="numbertext">2 / 22</div>
                <img src="images/gallery2.jpg" style="width:100%" class="center">
             </div>
          
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
             <div class="numbertext">3 / 22</div>
                <img src="images/gallery3.jpg" style="width:100%" class="center">
             </div>
          
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
             <div class="numbertext">4 / 22</div>
                <img src="images/gallery4.jpg" style="width:100%" class="center">
             </div>
          
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
             <div class="numbertext">5 / 22</div>
                <img src="images/gallery5.jpg" style="width:100%" class="center">
             </div>
          
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
             <div class="numbertext">6 / 22</div>
                <img src="images/gallery6.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
                <div class="numbertext">7 /22</div>
                   <img src="images/gallery7.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
                <div class="numbertext">8 /22</div>
                   <img src="images/gallery8.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
                <div class="numbertext">9 /22</div>
                   <img src="images/gallery9.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
                <div class="numbertext">10 /22</div>
                   <img src="images/gallery10.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
                <div class="numbertext">11 /22</div>
                   <img src="images/gallery11.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
                <div class="numbertext">12 /22</div>
                   <img src="images/gallery12.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
                <div class="numbertext">13 /22</div>
                   <img src="images/gallery13.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
                <div class="numbertext">14 /22</div>
                   <img src="images/gallery14.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
                <div class="numbertext">15 /22</div>
                   <img src="images/gallery15.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
                <div class="numbertext">16 /22</div>
                   <img src="images/gallery16.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
                <div class="numbertext">17 /22</div>
                   <img src="images/gallery17.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
                <div class="numbertext">18 /22</div>
                   <img src="images/gallery18.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
                <div class="numbertext">19 /22</div>
                   <img src="images/gallery19.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
                <div class="numbertext">20 /22</div>
                   <img src="images/gallery20.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
                <div class="numbertext">21 /22</div>
                   <img src="images/gallery21.jpg" style="width:100%" class="center">
             </div>
 
-            <div class="mySlides">
+            <div class="mySlides" id="touchsurface">
                <div class="numbertext">22 /22</div>
                   <img src="images/gallery22.jpg" style="width:100%" class="center">
             </div>
@@ -288,7 +288,6 @@
                <img class="demo cursor" src="images/gallery22.jpg" style="width:100%" onclick="currentSlide(22)" alt="Inredning">
             </div>
             </div>
-            <h1>Swipe to Detect Gestures<br><small>(touchscreen only)</small></h1>
          </div>
       </div>
       <!-- end gallery -->
@@ -353,14 +352,10 @@
 
       function handleswipe(isrightswipe){
          if (isrightswipe)
-               touchsurface.innerHTML = 'Congrats, you\'ve made a <span style="color:red">right swipe!</span>'
-         else{
-               touchsurface.innerHTML = 'Condition for right swipe not met yet'
-         }
+            plusSlides(1)
       }
 
       touchsurface.addEventListener('touchstart', function(e){
-         touchsurface.innerHTML = ''
          var touchobj = e.changedTouches[0]
          dist = 0
          startX = touchobj.pageX
