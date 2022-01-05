@@ -102,19 +102,19 @@
                   <form id="request" class="main_form" action="https://formspree.io/f/xjvlkjve" method="post">
                      <div class="row">
                         <div class="col-md-12 ">
-                           <input class="contactus" placeholder="Namn" type="name" name="Name"> 
+                           <input class="contactus" placeholder="Namn" type="name" name="Name" required> 
                         </div>
                         <div class="col-md-12">
-                           <input class="contactus" placeholder="Email" type="email" name="Email"> 
+                           <input class="contactus" placeholder="Mejladress" type="email" name="Email" required> 
                         </div>
                         <div class="col-md-12">
-                           <input class="contactus" placeholder="Telefonnummer" type="tel" name="Phone Number">                          
+                           <input class="contactus" placeholder="Telefonnummer" type="tel" name="Phone Number" required>                          
                         </div>
                         <div class="col-md-12">
-                           <textarea class="textarea" placeholder="Message" type="text" Message="Name"></textarea>
+                           <textarea class="textarea" placeholder="Meddelande" type="text" name="Message" required></textarea>
                         </div>
                         <div class="col-md-12">
-                           <button type="submit" class="send_btn">Send</button>
+                           <button type="submit" class="send_btn">Skicka meddelande</button>
                         </div>
                      </div>
                   </form>
@@ -122,7 +122,9 @@
                <div class="col-md-6">
                   <div class="map_main">
                      <div class="map-responsive">
-                        <iframe src="https://maps.google.com/maps?q=FJ%C3%84LLFOTENS%20STUGBY%2020,%20790%2091%20Idre&t=&z=17&ie=UTF8&iwloc=&output=embed" width="600" height="400" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
+                        <iframe 
+                           src="https://maps.google.com/maps?q=FJ%C3%84LLFOTENS%20STUGBY%2020,%20790%2091%20Idre&t=&z=11&ie=UTF8&iwloc=&output=embed"
+                           width="600" height="400" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
                      </div>
                   </div>
                </div>
@@ -130,9 +132,33 @@
          </div>
       </div>
       <!-- end contact -->
+      
       <!--  footer -->
       <footer>
          <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class=" col-md-4">
+                     <h3>Kontakta oss</h3>
+                     <ul class="conta">
+                        <li><i class="fa fa-map-marker" aria-hidden="true"></i> Fjällfoten 20</li>
+                        <li><i class="fa fa-mobile" aria-hidden="true"></i> 070-530 53 63</li>
+                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:fjallfoten20@gmail.com"> fjallfoten20@gmail.com</a></li>
+                     </ul>
+                  </div>
+                  
+                  <div class="col-md-4">
+                     <div class="map_main">
+                        <div class="map-responsive">
+                           <iframe 
+                              src="https://maps.google.com/maps?q=FJ%C3%84LLFOTENS%20STUGBY%2020,%20790%2091%20Idre&t=&z=11&ie=UTF8&iwloc=&output=embed"
+                              width="300" height="150" frameborder="0" style="border:0; width: 100%;" allowfullscreen="">
+                           </iframe>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
             <div class="copyright">
                <div class="container">
                   <div class="row">
