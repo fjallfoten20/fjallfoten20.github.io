@@ -99,17 +99,22 @@
          <div class="container">
             <div class="row">
                <div class="col-md-6">
-                  <form id="request" class="main_form">
+                  <form id="request" class="main_form" method="post" action="contact-form-process.php">
                      <div class="row">
-                        <div class="title">
-                              <h2>Kontaktuppgifter</h2>
-                              <h3><b> Mail:</b> fjallfoten20@gmail.com</h3>
-                              <h3><b> Telefon:</b> 070-530 53 63</h3>
-                              <h2></h2>
-                              <h2></h2>
-                         </div>
+                        <div class="col-md-12 ">
+                           <input class="contactus" placeholder="Namn" type="type" name="Name"> 
+                        </div>
                         <div class="col-md-12">
-                           <button class="send_btn" onclick="location.href='mailto:fjallfoten20@gmail.com';">Maila oss</button>
+                           <input class="contactus" placeholder="Email" type="type" name="Email"> 
+                        </div>
+                        <div class="col-md-12">
+                           <input class="contactus" placeholder="Telefonnummer" type="type" name="Phone Number">                          
+                        </div>
+                        <div class="col-md-12">
+                           <textarea class="textarea" placeholder="Meddelande" type="type" Message="Name"></textarea>
+                        </div>
+                        <div class="col-md-12">
+                           <button type="submit" class="send_btn">Send</button>
                         </div>
                      </div>
                   </form>
