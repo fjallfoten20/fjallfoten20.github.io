@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Varulista</title>
-	<style>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Varor</title>
+    <style>
 		input[type=text] {
 			padding: 10px;
 			font-size: 16px;
@@ -40,61 +41,77 @@
 			cursor: pointer;
 		}
 	</style>
-	<script>
-		// Hämta varulistan från varor.json
-		fetch('varor.json')
-			.then(response => response.json())
-			.then(data => {
-				// Loopa igenom varorna och lägg till dem i listan
-				data.forEach(vara => {
-					skapaVara(vara);
-				});
-			});
+  </head>
+  <body>
+    <h1>Varor</h1>
+    <form>
+      <label for="vara">Vara:</label>
+      <input type="text" id="vara" />
+      <button type="button" onclick="addVara()">Lägg till</button>
+    </form>
+    <table id="varor">
+      <thead>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <script>
+      function createNewRow(vara) {
+        const tbody = document.querySelector("#varor tbody");
+        const row = tbody.insertRow();
+        const cell1 = row.insertCell();
+        cell1.textContent = vara;
+        const cell2 = row.insertCell();
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Ta bort";
+        deleteButton.onclick = function () {
+          row.remove();
+          saveVarorToLocalStorage();
+        };
+        cell2.appendChild(deleteButton);
+      }
 
-		// Funktion för att lägga till en vara i listan
-		function skapaVara(vara) {
-			var varulista = document.getElementById("varulista");
-			var li = document.createElement("li");
-			var span = document.createElement("span");
-			span.appendChild(document.createTextNode(vara));
-			li.appendChild(span);
-			var button = document.createElement("button");
-			button.appendChild(document.createTextNode("X"));
-			button.onclick = function() { li.remove(); };
-			li.appendChild(button);
-			varulista.appendChild(li);
-			document.getElementById("vara").value = "";
-		}
+      function saveVara(vara) {
+        const varor = getVarorFromLocalStorage();
+        varor.push(vara);
+        localStorage.setItem("varor", JSON.stringify(varor));
+      }
 
-		// Funktion för att spara varorna i varor.json
-		function sparaVaror(varor) {
-			var json = JSON.stringify(varor);
-			var blob = new Blob([json], {type: "application/json"});
-			var url = URL.createObjectURL(blob);
+      function addVara() {
+        const varaInput = document.querySelector("#vara");
+        const vara = varaInput.value.trim();
+        if (!vara) {
+          alert("Varan får inte vara tom.");
+          return;
+        }
+        createNewRow(vara);
+        saveVara(vara);
+        varaInput.value = "";
+        varaInput.focus();
+      }
 
-			var a = document.createElement("a");
-			a.href = url;
-			a.download = "varor.json";
-			a.click();
-		}
+      function getVarorFromLocalStorage() {
+        const varorJSON = localStorage.getItem("varor");
+        if (varorJSON) {
+          return JSON.parse(varorJSON);
+        } else {
+          return [];
+        }
+      }
 
-		// Funktion som körs när användaren klickar på "Lägg till"
-		function addVara() {
-			var vara = document.getElementById("vara").value;
-			var varulista = document.getElementById("varulista");
+      function loadVarorFromLocalStorage() {
+        const varor = getVarorFromLocalStorage();
+        varor.forEach((vara) => createNewRow(vara));
+      }
 
-			// Lägg till varan i listan och spara varorna i varor.json
-			skapaVara(vara);
-			varor.push(vara);
-			sparaVaror(varor);
-		}
-	</script>
-</head>
-<body>
-	<h1>Varulista</h1>
-	<p>Lägg till varor nedan:</p>
-	<input type="text" id="vara" placeholder="Skriv in vara här...">
-	<button onclick="addVara()">Lägg till</button>
-	<ul id="varulista"></ul>
-</body>
+      function saveVarorToLocalStorage() {
+        const rows = document.querySelectorAll("#varor tbody tr");
+        const varor = [];
+        rows.forEach((row) => varor.push(row.cells[0].textContent));
+        localStorage.setItem("varor", JSON.stringify(varor));
+      }
+
+      loadVarorFromLocalStorage();
+    </script>
+  </body>
 </html>
