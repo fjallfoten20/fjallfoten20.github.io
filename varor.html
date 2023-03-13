@@ -47,12 +47,12 @@
 			.then(data => {
 				// Loopa igenom varorna och lägg till dem i listan
 				data.forEach(vara => {
-					addVara(vara);
+					skapaVara(vara);
 				});
 			});
 
 		// Funktion för att lägga till en vara i listan
-		function addVara(vara) {
+		function skapaVara(vara) {
 			var varulista = document.getElementById("varulista");
 			var li = document.createElement("li");
 			var span = document.createElement("span");
@@ -84,7 +84,7 @@
 			var varulista = document.getElementById("varulista");
 
 			// Lägg till varan i listan och spara varorna i varor.json
-			addVara(vara);
+			skapaVara(vara);
 			varor.push(vara);
 			sparaVaror(varor);
 		}
