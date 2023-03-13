@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Varulista</title>
+	<style>
+		input[type=text] {
+			padding: 10px;
+			font-size: 16px;
+		}
+		button {
+			padding: 10px;
+			font-size: 16px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+		ul {
+			list-style-type: none;
+			padding: 0;
+		}
+		li {
+			display: flex;
+			align-items: center;
+			padding: 10px;
+			margin-bottom: 10px;
+			background-color: #f2f2f2;
+			border-radius: 4px;
+		}
+		li > span {
+			flex: 1;
+		}
+		li > button {
+			margin-left: 10px;
+			background-color: #f44336;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+	</style>
+	<script>
+		// Hämta varulistan från varor.json
+		fetch('varor.json')
+			.then(response => response.json())
+			.then(data => {
+				// Loopa igenom varorna och lägg till dem i listan
+				data.forEach(vara => {
+					addVara(vara);
+				});
+			});
+
+		// Funktion för att lägga till en vara i listan
+		function addVara(vara) {
+			var varulista = document.getElementById("varulista");
+			var li = document.createElement("li");
+			var span = document.createElement("span");
+			span.appendChild(document.createTextNode(vara));
+			li.appendChild(span);
+			var button = document.createElement("button");
+			button.appendChild(document.createTextNode("X"));
+			button.onclick = function() { li.remove(); };
+			li.appendChild(button);
+			varulista.appendChild(li);
+			document.getElementById("vara").value = "";
+		}
+
+		// Funktion för att spara varorna i varor.json
+		function sparaVaror(varor) {
+			var json = JSON.stringify(varor);
+			var blob = new Blob([json], {type: "application/json"});
+			var url = URL.createObjectURL(blob);
+
+			var a = document.createElement("a");
+			a.href = url;
+			a.download = "varor.json";
+			a.click();
+		}
+
+		// Funktion som körs när användaren klickar på "Lägg till"
+		function addVara() {
+			var vara = document.getElementById("vara").value;
+			var varulista = document.getElementById("varulista");
+
+			// Lägg till varan i listan och spara varorna i varor.json
+			addVara(vara);
+			varor.push(vara);
+			sparaVaror(varor);
+		}
+	</script>
+</head>
+<body>
+	<h1>Varulista</h1>
+	<p>Lägg till varor nedan:</p>
+	<input type="text" id="vara" placeholder="Skriv in vara här...">
+	<button onclick="addVara()">Lägg till</button>
+	<ul id="varulista"></ul>
+</body>
+</html>
